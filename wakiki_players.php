@@ -26,7 +26,7 @@ function delPlayers($key)
     $total = count(file('player_list.txt'));
     foreach($fc as $line)
         {
-            if (substr($line,0,-1)!==substr($key,0,-2)) //look for $key in each line
+            if (substr($line,0,-1)!==$key) //look for $key in each line
                 fputs($fichier,$line); //place $line back in file
         }
     echo("<meta http-equiv='refresh' content='1'>");

@@ -115,6 +115,18 @@ function GetValues($log,$entiteList)
                     }
                 }
             }
+            $positionMotClef = strpos($ligneSimplifier, "Faisceau de Lune)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Faisceau de Lune";
+                $sort->element = "Terre";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
             $positionMotClef = strpos($ligneSimplifier, "Lame Sanglante)");
             if($positionMotClef !== false){
                 $sort = new sort();
@@ -577,6 +589,33 @@ function GetValues($log,$entiteList)
                     if($entite->nom == $lanceur){ 
                         end($entite->histoSort)->effet = "
                         <div class=tooltip>&#x1F387<span class=tooltiptext>Abondance</span></div>";
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Initiative de l'Âme)");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x23EB<span class=tooltiptext>Initiative de l'Âme (+2PA)</span></div>";
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Plénitude)");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x1F505<span class=tooltiptext>Plénitude (+25 Abondance)</span></div>";
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Dynamo)");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x26A1<span class=tooltiptext>Dynamo (+1 PA)</span></div>";
                     }
                 }
             }

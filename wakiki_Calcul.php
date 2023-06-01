@@ -149,6 +149,51 @@ function GetValues($log,$entiteList)
                     }
                 }
             }
+            $positionMotClef = strpos($ligneSimplifier, "Piège de Lacération)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Piège de Lacération";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Piège de Brume)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Piège de Brume";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Piège de Silence)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Piège de Silence";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+
+            $positionMotClef = strpos($ligneSimplifier, "Hémorragie)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Hémorragie";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
             $positionMotClef = strpos($ligneSimplifier, "Distorsion)");
             if($positionMotClef !== false){
                 $sort = new sort();
@@ -296,6 +341,29 @@ function GetValues($log,$entiteList)
             if($positionMotClef !== false){
                 $sort = new sort();
                 $sort->nom = "Maudit";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+
+            $positionMotClef = strpos($ligneSimplifier, "Précision vorace)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Précision vorace";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Criblé)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Criblé";
 
                 foreach ($entiteList as $entite) {
                     if($entite->nom == $lanceur){ 
@@ -536,6 +604,16 @@ function GetValues($log,$entiteList)
                 }
             }
 
+            $positionMotClef = strpos($ligneSimplifier, "Consomme Escroquerie");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x1F52A<span class=tooltiptext>Escroquerie (Dégats +)</span></div>";
+                    }
+                }
+            }
+
             $positionMotClef = strpos($ligneSimplifier, "'Trésors'");
             if($positionMotClef !== false){
                 foreach ($entiteList as $entite) {
@@ -688,7 +766,7 @@ function GetValues($log,$entiteList)
                 foreach ($entiteList as $entite) {
                     if($entite->nom ==  $lanceur){ 
                         $entite->armure += (int)$value;
-                        
+
                         if($sort->degat != ""){
                             if($sort->degat[0] == "+"){
                                 $value = (int)$value + (int)substr($sort->degat,1);

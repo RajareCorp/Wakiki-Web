@@ -1,8 +1,8 @@
 body{
     overflow-x: hidden; /* Hide vertical scrollbar */
-    background-image: url('https://cdn.discordapp.com/attachments/780007392247021578/1105931416589566012/bg.jpg');
+    /* background-image: url('https://cdn.discordapp.com/attachments/780007392247021578/1105931416589566012/bg.jpg'); */
     /* background-image: url('https://media.discordapp.net/attachments/990011334315896892/990012094009192448/FOOOOO.jpg?width=1920&height=1080'); */
-    /* background-color: #080710; */
+    background-color: #080710;
 }
 .background{
     width: 430px;

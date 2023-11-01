@@ -39,7 +39,10 @@ function getLog()
 }
 function setLog($path)
 {
-    $fichier = fopen('log.txt', 'w');  
+    $fichier = fopen('log.txt', 'w');
+    //Si path ne contient pas wakfu_chat.log :le rajoute
+    if (strpos($path, 'wakfu_chat.log') === false)
+        $path = $path."\wakfu_chat.log";
     fputs($fichier,$path);
     echo("<meta http-equiv='refresh' content='1'>");
 }

@@ -115,10 +115,78 @@ function GetValues($log,$entiteList)
                     }
                 }
             }
+            $positionMotClef = strpos($ligneSimplifier, "Faisceau de Lune)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Faisceau de Lune";
+                $sort->element = "Terre";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Halo Chatoyant)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Halo Chatoyant";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
             $positionMotClef = strpos($ligneSimplifier, "Lame Sanglante)");
             if($positionMotClef !== false){
                 $sort = new sort();
                 $sort->nom = "Lame Sanglante";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Piège de Lacération)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Piège de Lacération";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Piège de Brume)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Piège de Brume";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Piège de Silence)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Piège de Silence";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+
+            $positionMotClef = strpos($ligneSimplifier, "Hémorragie)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Hémorragie";
 
                 foreach ($entiteList as $entite) {
                     if($entite->nom == $lanceur){ 
@@ -273,6 +341,29 @@ function GetValues($log,$entiteList)
             if($positionMotClef !== false){
                 $sort = new sort();
                 $sort->nom = "Maudit";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+
+            $positionMotClef = strpos($ligneSimplifier, "Précision vorace)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Précision vorace";
+
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        array_push($entite->histoSort,$sort);
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Criblé)");
+            if($positionMotClef !== false){
+                $sort = new sort();
+                $sort->nom = "Criblé";
 
                 foreach ($entiteList as $entite) {
                     if($entite->nom == $lanceur){ 
@@ -513,6 +604,16 @@ function GetValues($log,$entiteList)
                 }
             }
 
+            $positionMotClef = strpos($ligneSimplifier, "Consomme Escroquerie");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x1F52A<span class=tooltiptext>Escroquerie (Dégats +)</span></div>";
+                    }
+                }
+            }
+
             $positionMotClef = strpos($ligneSimplifier, "'Trésors'");
             if($positionMotClef !== false){
                 foreach ($entiteList as $entite) {
@@ -580,6 +681,33 @@ function GetValues($log,$entiteList)
                     }
                 }
             }
+            $positionMotClef = strpos($ligneSimplifier, "Initiative de l'Âme)");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x23EB<span class=tooltiptext>Initiative de l'Âme (+2PA)</span></div>";
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Plénitude)");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x1F505<span class=tooltiptext>Plénitude (+25 Abondance)</span></div>";
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Dynamo)");
+            if($positionMotClef !== false){
+                foreach ($entiteList as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        end($entite->histoSort)->effet = "
+                        <div class=tooltip>&#x26A1<span class=tooltiptext>Dynamo (+1 PA)</span></div>";
+                    }
+                }
+            }
             $positionMotClef = strpos($ligneSimplifier, "Consomme Entaille");
             if($positionMotClef !== false){
                 foreach ($entiteList as $entite) {
@@ -638,7 +766,28 @@ function GetValues($log,$entiteList)
                 foreach ($entiteList as $entite) {
                     if($entite->nom ==  $lanceur){ 
                         $entite->armure += (int)$value;
-                        $sort->degat = "+".$value;
+
+                        if($sort->degat != ""){
+                            if($sort->degat[0] == "+"){
+                                $value = (int)$value + (int)substr($sort->degat,1);
+                                $sort->degat = "+".(String)$value;
+                            }else{
+                                $NewSort = new sort();
+                                $NewSort->nom = $sort->nom;
+                                $NewSort->degat = "+".(String)$value;
+                                $sort = $NewSort;
+
+                                foreach ($entiteList as $entite) {
+                                    if($entite->nom == $lanceur){ 
+                                        array_push($entite->histoSort,$sort);
+                                    }
+                                }
+                            }
+                        }else{
+                            $sort->degat = "+".$value;
+                        }
+
+
                         $sort->effet = "<div class=tooltip>&#x1F6E1</div>";
                         if(strpos($ligneValue, "Feu") !== false){
                             $sort->element = "Feu";
@@ -692,7 +841,27 @@ function GetValues($log,$entiteList)
                                 }
                                 
                                 $entite->degat += (int)$value;
-                                $sort->degat = "-".$value;
+                                
+                                if($sort->degat != ""){
+                                    if($sort->degat[0] == "-"){
+                                        $value = (int)$value + (int)substr($sort->degat,1);
+                                        $sort->degat = "-".(String)$value;
+                                    }else{
+                                        $NewSort = new sort();
+                                        $NewSort->nom = $sort->nom;
+                                        $NewSort->degat = "-".(String)$value;
+                                        $sort = $NewSort;
+    
+                                        foreach ($entiteList as $entite) {
+                                            if($entite->nom == $lanceur){ 
+                                                array_push($entite->histoSort,$sort);
+                                            }
+                                        }
+                                    }
+                                }else{
+                                    $sort->degat = "-".$value;
+                                }
+
                                 if(strpos($ligneValue, "Feu") !== false){
                                     $sort->element = "Feu";
                                 }
@@ -758,8 +927,30 @@ function GetValues($log,$entiteList)
                     foreach ($entiteList as $entite) {
                         
                         if($entite->nom == $lanceur){ 
+
                             $entite->soin += (int)$value;
-                            $sort->degat = "+".$value;
+
+                            if($sort->degat != ""){
+                                if($sort->degat[0] == "+"){
+                                    $value = (int)$value + (int)substr($sort->degat,1);
+                                    $sort->degat = "+".(String)$value;
+                                }else{
+                                    $NewSort = new sort();
+                                    $NewSort->nom = $sort->nom;
+                                    $NewSort->degat = "+".(String)$value;
+                                    $sort = $NewSort;
+
+                                    foreach ($entiteList as $entite) {
+                                        if($entite->nom == $lanceur){ 
+                                            array_push($entite->histoSort,$sort);
+                                        }
+                                    }
+                                }
+                            }else{
+                                $sort->degat = "+".$value;
+                            }
+
+
                             if(strpos($ligneValue, "Feu") !== false){
                                 $sort->element = "Feu";
                             }

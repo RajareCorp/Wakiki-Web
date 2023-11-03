@@ -1,66 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Wakiki
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Wakiki est une application Web utilisant le framework Laravel afin d'avoir un affichage poussé de vos combat sur Wakfu.
+L'application fonctionne grâce à vos logs chat ce qui les rends majoritairement inutilisable pour Ankama en cas de debug de leur part.
+Wakiki permet de suivre :
+    - Dégats infligés
+    - Soins réalisés
+    - Armures Reçus
+    - Sorts lancés
 
-## About Laravel
+## Pré-requis
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Une version de php récente (avec .ini personnalisable) : https://www.php.net/downloads.php
+Un serveur mariadb : https://mariadb.org/download/
+Un logiciel de gestion de base de donnée (DBeaver) : https://dbeaver.io/download/
+Composer : https://mariadb.org/download/
+Un IDE (Visual Studio Code) : https://code.visualstudio.com/download/
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Mise en place / Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1) Télécharger Wakiki
+2) Créé une base de donnée nommé "wakiki"
+3) Restauré la base de donnée grâce au dump situé dans "database\dumps"
+4) Configurer le .env :
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=wakiki
+    DB_USERNAME=VotreUser
+    DB_PASSWORD=VotreMotDePasse
+    
+5) lancer le serveur avec la commande "php artisan serv"
 
-## Learning Laravel
+## CGU Wakfu
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Pour rappel :
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    TRICHE
+    Il est interdit d'abuser d'un bug du jeu. Toute anomalie doit être reportée au Support dans la section correspondante.
+    L'utilisation de programme tiers (type " bot ") est interdite.
+    La modification du client WAKFU est interdite. Ceci englobe tous les fichiers présents dans le répertoire d'installation de WAKFU.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Wakiki n'étant pas un bot, ne procurant pas d'avantage en jeu et ne modifiant aucun fichier ce trouvant dans le répertoire d'installation de Wakfu est totalement légal et ne peut entrainer de sanction.
+(Les logs ne font pas partie des fichiers présents dans le répertoire d'installation)

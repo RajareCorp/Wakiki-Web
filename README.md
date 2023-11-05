@@ -10,11 +10,11 @@ Wakiki permet de suivre :<br>
 
 ## Pré-requis
 
-Une version de php récente (avec .ini personnalisable) : https://www.php.net/downloads.php
-Un serveur mariadb : https://mariadb.org/download/
-Un logiciel de gestion de base de donnée (DBeaver) : https://dbeaver.io/download/
-Composer : https://mariadb.org/download/
-Un IDE (Visual Studio Code) : https://code.visualstudio.com/download/
+Une version de php récente (avec .ini personnalisable) : https://www.php.net/downloads.php<br>
+Un serveur mariadb : https://mariadb.org/download/<br>
+Un logiciel de gestion de base de donnée (DBeaver) : https://dbeaver.io/download/<br>
+Composer : https://mariadb.org/download/<br>
+Un IDE (Visual Studio Code) : https://code.visualstudio.com/download/<br>
 
 ## Mise en place / Installation
 

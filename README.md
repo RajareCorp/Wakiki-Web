@@ -1,12 +1,12 @@
 ## Wakiki
 
-Wakiki est une application Web utilisant le framework Laravel afin d'avoir un affichage poussé de vos combat sur Wakfu.
-L'application fonctionne grâce à vos logs chat ce qui les rends majoritairement inutilisable pour Ankama en cas de debug de leur part.
-Wakiki permet de suivre :
-    - Dégats infligés
-    - Soins réalisés
-    - Armures Reçus
-    - Sorts lancés
+Wakiki est une application Web utilisant le framework Laravel afin d'avoir un affichage poussé de vos combats sur Wakfu.<br>
+L'application fonctionne grâce à vos logs chat ce qui les rends majoritairement inutilisables pour Ankama en cas de debug de leur part.
+Wakiki permet de suivre :<br>
+    - Dégats infligés<br>
+    - Soins reçus<br>
+    - Armures reçus<br>
+    - Sorts lancés<br>
 
 ## Pré-requis
 
@@ -21,13 +21,13 @@ Un IDE (Visual Studio Code) : https://code.visualstudio.com/download/
 1) Télécharger Wakiki
 2) Créé une base de donnée nommé "wakiki"
 3) Restauré la base de donnée grâce au dump situé dans "database\dumps"
-4) Configurer le .env :
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=wakiki
-    DB_USERNAME=VotreUser
-    DB_PASSWORD=VotreMotDePasse
+4) Configurer le .env :<br>
+    DB_CONNECTION=mysql<br>
+    DB_HOST=127.0.0.1<br>
+    DB_PORT=3306<br>
+    DB_DATABASE=wakiki<br>
+    DB_USERNAME=VotreUser<br>
+    DB_PASSWORD=VotreMotDePasse<br>
     
 5) lancer le serveur avec la commande "php artisan serv"
 

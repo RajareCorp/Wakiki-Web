@@ -1,7 +1,17 @@
+     ██▀███   ▄▄▄      ▄▄▄██▀▀▀▄▄▄       ██▀███  ▓█████ 
+    ▓██ ▒ ██▒▒████▄      ▒██  ▒████▄    ▓██ ▒ ██▒▓█   ▀ 
+    ▓██ ░▄█ ▒▒██  ▀█▄    ░██  ▒██  ▀█▄  ▓██ ░▄█ ▒▒███   
+    ▒██▀▀█▄  ░██▄▄▄▄██▓██▄██▓ ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓█  ▄ 
+    ░██▓ ▒██▒ ▓█   ▓██▒▓███▒   ▓█   ▓██▒░██▓ ▒██▒░▒████▒
+    ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░▒▓▒▒░   ▒▒   ▓▒█░░ ▒▓ ░▒▓░░░ ▒░ ░
+      ░▒ ░ ▒░  ▒   ▒▒ ░▒ ░▒░    ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ░  ░
+      ░░   ░   ░   ▒   ░ ░ ░    ░   ▒     ░░   ░    ░   
+       ░           ░  ░░   ░        ░  ░   ░        ░  ░
+
 ## Wakiki
 
 Wakiki est une application Web utilisant le framework Laravel afin d'avoir un affichage poussé de vos combats sur Wakfu.<br>
-L'application fonctionne grâce à vos logs chat ce qui les rends majoritairement inutilisables pour Ankama en cas de debug de leur part.
+L'application fonctionne grâce à vos logs chats ce qui les rend majoritairement inutilisables pour Ankama en cas de debug de leur part.
 Wakiki permet de suivre :<br>
     - Dégats infligés<br>
     - Soins reçus<br>
@@ -19,8 +29,8 @@ Un IDE (Visual Studio Code) : https://code.visualstudio.com/download/<br>
 ## Mise en place / Installation
 
 1) Télécharger Wakiki
-2) Créé une base de donnée nommé "wakiki"
-3) Restauré la base de donnée grâce au dump situé dans "database\dumps"
+2) Créer une base de donnée nommé "wakiki"
+3) Restaurer la base de donnée grâce au dump situé dans "database\dumps"
 4) Configurer le .env :<br>
     DB_CONNECTION=mysql<br>
     DB_HOST=127.0.0.1<br>

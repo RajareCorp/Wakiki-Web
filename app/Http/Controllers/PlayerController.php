@@ -46,10 +46,15 @@ class PlayerController extends Controller
     }
 
     function resetLog(Request $request)
-    {
+    {   
+        if($request->input('reset') == null)
+            $logPath = $request->input('reset');
+        else
+            $logPath = fgets(fopen('log.txt', 'rb'));
+
         $fichier = fopen($request->input('reset'), 'w');
         fclose($fichier);
-        return view('welcome', ['logPath' => $request->input('reset'), 'players' => Player::all()]);
+        return view('welcome', ['logPath' => $logPath, 'players' => Player::all()]);
     }
 
     function calcul(Request $request)

@@ -22,10 +22,15 @@
              
             <p class="error"> Vous avez du taper comme un fouirox !<br>
                 Il semble y avoir un problème.<br>
-                Vous pouvez de reset vos logs pour reprendre à zéro<br>
+                Vous pouvez reset vos logs pour reprendre à zéro<br>
                 ou bien vous pouvez contacter le développeur pour lui<br>
                 signaler le problème ici : <a href="https://discord.gg/KyVd3azBn6">https://discord.gg/KyVd3azBn6</a>
-            </p>
+            </p>        
+        <form action="/resetLog" method="post" class="reset">
+        @csrf
+        <input value="" name="reset" type=hidden>
+        <button>Reset</button>
+        </form>
         </div>
         <img src="images/blerox.png" alt="Erreur" class="img-reduced">
     </div>

@@ -27,4 +27,15 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    protected function renderHttpException(\Symfony\Component\HttpKernel\Exception\HttpExceptionInterface $e)
+    {
+        $status = $e->getStatusCode();
+
+        if (app()->hasDebugModeEnabled() && view()->exists("customError")) {
+            return response()->view("customError", compact("status"), $status);
+        } else {
+            return parent::renderHttpException($e);
+        }
+    }
 }

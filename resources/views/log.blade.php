@@ -6,6 +6,7 @@
         <!-- <meta http-equiv="refresh" content="3"> -->
 
         <title>Wakiki - By Rajare</title>
+        <link rel="icon" href="wakiki_cube.ico">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

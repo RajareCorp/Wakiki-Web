@@ -1,0 +1,32 @@
+.error{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+}
+
+.img-error {
+    width: 10%; /* Réduire la largeur de l'image à 10% de la largeur de son conteneur */
+    max-width: 100px; /* Limiter la largeur maximale de l'image à 100 pixels (ajustez selon vos besoins) */
+    height: auto; /* Garantir une hauteur proportionnelle à la largeur */
+}
+
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajustez la hauteur selon vos besoins */
+}
+
+.text-container {
+    text-align: left;
+    margin-right: 20px; /* Ajustez la marge entre le texte et l'image selon vos besoins */
+    background-color: #100707;
+    border: red solid 5px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+a {
+    color: #0f5f7a;
+    text-decoration: none;
+    font-weight: bold;
+}

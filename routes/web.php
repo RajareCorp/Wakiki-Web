@@ -26,3 +26,7 @@ Route::post('/realtime', [PlayerController::class, 'realtime']);
 Route::get('/realtime', [PlayerController::class, 'realtime']);
 
 Route::get('/log', [PlayerController::class, 'log']);
+
+Route::get('/error', function () {
+    return view('customError');
+})->name('custom.error');

@@ -336,11 +336,8 @@ class CalculController extends Controller
                 $ligneValue = substr($ligneSimplifier, $debutValue);
                 $positionMotClef = strpos($ligneValue, "-");
                 if($positionMotClef == 1){
-                    $value = "";
-                    foreach (str_split($ligneValue) as $chiffre) {
-                        if(ctype_digit($chiffre))
-                            $value = $value.$chiffre;
-                    }
+                    $value = preg_replace('/[^0-9]/', '', $ligneValue);
+
                     $compteurParade = 0;
                     $positionMotClef = strpos($ligneSimplifier, "(Parade !)"); //detecte les parades
                     if($positionMotClef !== false){
@@ -385,28 +382,27 @@ class CalculController extends Controller
                                     $sort->save();
                                 }
 
-                                if(strpos($ligneValue, "Feu") !== false){
-                                    $sort->element = "Feu";
+                                $elements = ["Feu", "Eau", "Terre", "Air"];
+                                foreach ($elements as $element) {
+                                    if (strpos($ligneValue, $element) !== false) {
+                                        $sort->element = $element;
+                                        break;
+                                    }
                                 }
-                                if(strpos($ligneValue, "Eau") !== false){
-                                    $sort->element = "Eau";
-                                }
-                                if(strpos($ligneValue, "Terre") !== false){
-                                    $sort->element = "Terre";
-                                }
-                                if(strpos($ligneValue, "Air") !== false){
-                                    $sort->element = "Air";
-                                }
-                                if(strpos($ligneValue, "Lumière") !== false){
+
+                                if (strpos($ligneValue, "Lumière") !== false) {
                                     $sort->isLumiere = true;
                                 }
-                                if(strpos($ligneValue, "Stasis") !== false){
+
+                                if (strpos($ligneValue, "Stasis") !== false) {
                                     $sort->isStasis = true;
                                 }
-                                if($compteurCC == 1){
+
+                                if ($compteurCC === 1) {
                                     $sort->isCrit = true;
                                 }
-                                if($compteurParade == 1){
+
+                                if (isset($compteurParade) && $compteurParade === 1) {
                                     $sort->isParade = true;
                                 }
                                 
@@ -498,30 +494,30 @@ class CalculController extends Controller
                             }
 
 
-                            if(strpos($ligneValue, "Feu") !== false){
-                                $sort->element = "Feu";
+                            $elements = ["Feu", "Eau", "Terre", "Air"];
+                            foreach ($elements as $element) {
+                                if (strpos($ligneValue, $element) !== false) {
+                                    $sort->element = $element;
+                                    break;
+                                }
                             }
-                            if(strpos($ligneValue, "Eau") !== false){
-                                $sort->element = "Eau";
-                            }
-                            if(strpos($ligneValue, "Terre") !== false){
-                                $sort->element = "Terre";
-                            }
-                            if(strpos($ligneValue, "Air") !== false){
-                                $sort->element = "Air";
-                            }
-                            if(strpos($ligneValue, "Lumière") !== false){
+
+                            if (strpos($ligneValue, "Lumière") !== false) {
                                 $sort->isLumiere = true;
                             }
-                            if(strpos($ligneValue, "Stasis") !== false){
+
+                            if (strpos($ligneValue, "Stasis") !== false) {
                                 $sort->isStasis = true;
                             }
-                            if($compteurCC == 1){
+
+                            if ($compteurCC === 1) {
                                 $sort->isCrit = true;
                             }
-                            if($compteurParade == 1){
+
+                            if (isset($compteurParade) && $compteurParade === 1) {
                                 $sort->isParade = true;
                             }
+                            
                             $sort->save();
                         }
                     }

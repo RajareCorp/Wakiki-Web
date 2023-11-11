@@ -10,7 +10,7 @@
 
 ## Wakiki
 
-⚠Veuillez noter que Wakiki n'est en aucun cas affiliée au studio Ankama ni à son jeu Wakfu.⚠
+⚠Veuillez noter que Wakiki n'est en aucun cas affilié au studio Ankama ni à son jeu Wakfu.⚠
 
 Wakiki est une application Web utilisant le framework Laravel afin d'avoir un affichage poussé de vos combats sur Wakfu.<br>
 L'application fonctionne grâce à vos logs chats ce qui les rend majoritairement inutilisables pour Ankama en cas de debug de leur part.
@@ -30,26 +30,20 @@ Wakiki décline toute responsabilité quant à tout impact sur l'expérience de 
 
 ## Pré-requis
 
+⚠Penser à ajouter les variables environnements au PATH.⚠
+
 Une version de php récente (avec .ini personnalisable) : https://www.php.net/downloads.php<br>
-Un serveur mariadb : https://mariadb.org/download/<br>
-Un logiciel de gestion de base de donnée (DBeaver) : https://dbeaver.io/download/<br>
-Composer : https://mariadb.org/download/<br>
-Un IDE (Visual Studio Code) : https://code.visualstudio.com/download/<br>
+Composer : https://getcomposer.org/download/<br>
+
+Activer les extensions ci-dessous dans le fichier php.ini en retirant les ";" (emplacement disponible avec : php --ini) :<br>
+extension=fileinfo<br>
+extension=pdo_sqlite<br>
 
 ## Mise en place / Installation
 
 1) Télécharger Wakiki
-2) Créer une base de donnée nommé "wakiki"
-3) Restaurer la base de donnée grâce au dump situé dans "database\dumps"
-4) Configurer le .env :<br>
-    DB_CONNECTION=mysql<br>
-    DB_HOST=127.0.0.1<br>
-    DB_PORT=3306<br>
-    DB_DATABASE=wakiki<br>
-    DB_USERNAME=VotreUser<br>
-    DB_PASSWORD=VotreMotDePasse<br>
-    
-5) lancer le serveur avec la commande "php artisan serv"
+2) Lancer wakiki_set_up.bat puis attender la fin de l'installation
+3) Lancer le raccourci "Wakiki" directement depuis votre bureau
 
 ## CGU Wakfu
 

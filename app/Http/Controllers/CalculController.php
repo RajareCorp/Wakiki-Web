@@ -37,7 +37,7 @@ class CalculController extends Controller
                 $sort->nom = substr($ligneSimplifier,$positionMotClef+14); //Nom du sort lance
 
                 // 2. Utiliser des tableaux associatifs pour les effets des sorts :
-                $effetsSort = [
+                $effetsSortsZobal = [
                     'protecteurRecule' => [
                         -1 => "<div class=tooltip>&#x1F5A4<span class=tooltiptext>Protecteur reculé - malus (-20% Soins réalisés)</span></div>",
                         1  => "<div class=tooltip>&#x1F496<span class=tooltiptext>Protecteur reculé - bonus (+30% Soins réalisés)</span></div>",
@@ -52,7 +52,7 @@ class CalculController extends Controller
                     if($lanceur == $entite->nom){
                         foreach (['protecteurRecule', 'auContact'] as $effetType) {
                             if (isset($entite->$effetType)) {
-                                $sort->effet = $effetsSort[$effetType][$entite->$effetType];
+                                $sort->effet = $effetsSortsZobal[$effetType][$entite->$effetType];
                             }
                         }
                     }
@@ -204,139 +204,31 @@ class CalculController extends Controller
             }
             
             //AUTRE___________________________________________________________________________
-            $positionMotClef = strpos($ligneSimplifier, "Consomme Pointe affûtée");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F3AF<span class=tooltiptext>Pointe affûtée</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-
-            $positionMotClef = strpos($ligneSimplifier, "Consomme Escroquerie");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F52A<span class=tooltiptext>Escroquerie (Dégats +)</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-
-            $positionMotClef = strpos($ligneSimplifier, "'Trésors'");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F48E<span class=tooltiptext>Trésors</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-
-            $positionMotClef = strpos($ligneSimplifier, "sort Ougigarou");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F315<span class=tooltiptext>Début Ougigarou</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-
-            $positionMotClef = strpos($ligneSimplifier, "'Ougigarou'");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F319<span class=tooltiptext>Fin Ougigarou</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-
-            $positionMotClef = strpos($ligneSimplifier, "céleste - Compteur");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F30C<span class=tooltiptext>Portail Céleste - Compteur +1</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-
-            $positionMotClef = strpos($ligneSimplifier, "'Don Céleste'");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F386<span class=tooltiptext>Don Céleste (30% Dommages infligés)</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-            $positionMotClef = strpos($ligneSimplifier, "Consomme Coup Précis");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F3B2<span class=tooltiptext>Coup Précis (50% Dommages infligés, 1PW)</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-            $positionMotClef = strpos($ligneSimplifier, "Consomme Abondance");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F387<span class=tooltiptext>Abondance</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-            $positionMotClef = strpos($ligneSimplifier, "Initiative de l'Âme)");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x23EB<span class=tooltiptext>Initiative de l'Âme (+2PA)</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-            $positionMotClef = strpos($ligneSimplifier, "Plénitude)");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1F505<span class=tooltiptext>Plénitude (+25 Abondance)</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-            $positionMotClef = strpos($ligneSimplifier, "Dynamo)");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x26A1<span class=tooltiptext>Dynamo (+1 PA)</span></div>";
-                        $sort->save();
-                    }
-                }
-            }
-            $positionMotClef = strpos($ligneSimplifier, "Consomme Entaille");
-            if($positionMotClef !== false){
-                foreach ($Players as $entite) {
-                    if($entite->nom == $lanceur){ 
-                        $sort->effet = "
-                        <div class=tooltip>&#x1FA78<span class=tooltiptext>Entaille (25% Dommages infligés)</span></div>";
-                        $sort->save();
+            $effetsSorts = [
+                "Consomme Pointe affûtée" => "&#x1F3AF<span class=tooltiptext>Pointe affûtée</span>",
+                "Consomme Escroquerie" => "&#x1F52A<span class=tooltiptext>Escroquerie (Dégats +)</span>",
+                "'Trésors'" => "&#x1F48E<span class=tooltiptext>Trésors</span>",
+                "sort Ougigarou" => "&#x1F315<span class=tooltiptext>Début Ougigarou</span>",
+                "'Ougigarou'" => "&#x1F319<span class=tooltiptext>Fin Ougigarou</span>",
+                "céleste - Compteur" => "&#x1F30C<span class=tooltiptext>Portail Céleste - Compteur +1</span>",
+                "'Don Céleste'" => "&#x1F386<span class=tooltiptext>Don Céleste (30% Dommages infligés)</span>",
+                "Consomme Coup Précis" => "&#x1F3B2<span class=tooltiptext>Coup Précis (50% Dommages infligés, 1PW)</span>",
+                "Consomme Abondance" => "&#x1F387<span class=tooltiptext>Abondance</span>",
+                "Initiative de l'Âme)" => "&#x23EB<span class=tooltiptext>Initiative de l'Âme (+2PA)</span>",
+                "Plénitude)" => "&#x1F505<span class=tooltiptext>Plénitude (+25 Abondance)</span>",
+                "Dynamo)" => "&#x26A1<span class=tooltiptext>Dynamo (+1 PA)</span>",
+                "Consomme Entaille" => "&#x1FA78<span class=tooltiptext>Entaille (25% Dommages infligés)</span>",
+            ];
+            
+            foreach ($effetsSorts as $motClef => $effet) {
+                $positionMotClef = strpos($ligneSimplifier, $motClef);
+                
+                if ($positionMotClef !== false) {
+                    foreach ($Players as $entite) {
+                        if ($entite->nom == $lanceur) { 
+                            $sort->effet = "<div class=tooltip>$effet</div>";
+                            $sort->save();
+                        }
                     }
                 }
             }
@@ -377,73 +269,66 @@ class CalculController extends Controller
             //ARMURE___________________________________________________________________________
             $positionMotClef = strpos($ligneSimplifier, "Armure");
             $antiSadida = strpos($ligneSimplifier, "(Prière Sadida)");
-            if($positionMotClef != false && $antiSadida == false && $sort != false){
-                
-                $ligneValue = substr($ligneSimplifier, $debutValue);
-                $value = "";
-                foreach (str_split($ligneValue) as $chiffre) {
-                    if(ctype_digit($chiffre))
-                        $value = $value.$chiffre;
-                }
 
-                //$entiteName = substr($ligneSimplifier, 23,$debutValue-24); //recupere le nom de l'entite
+            if ($positionMotClef !== false && $antiSadida === false && $sort !== false) {
+                $ligneValue = substr($ligneSimplifier, $debutValue);
+                $value = preg_replace('/[^0-9]/', '', $ligneValue); // Remplace tout ce qui n'est pas un chiffre par une chaîne vide
+
                 foreach ($Players as $entite) {
-                    if($entite->nom ==  $lanceur){ 
+                    if ($entite->nom === $lanceur) {
                         $entite->armure += (int)$value;
 
-                        if($sort->degat != ""){
-
+                        if ($sort->degat !== "") {
                             $NewSort = new Sort;
                             $NewSort->nom = $sort->nom;
                             $NewSort->degat = (int)$value;
                             $NewSort->element = $sort->element;
                             $NewSort->isSoinArmure = 1;
                             $sort = $NewSort;
-                            
+
                             $sort->save();
                             foreach ($Players as $entite) {
-                                if($entite->nom == $lanceur){ 
+                                if ($entite->nom === $lanceur) {
                                     $histo = new histoSort;
                                     $histo->idSort = $sort->id;
                                     $histo->idPlayer = $entite->id;
                                     $histo->save();
                                 }
                             }
-    
-                        }else{
+
+                        } else {
                             $sort->degat = $value;
                         }
 
-
                         $sort->effet = "<div class=tooltip>&#x1F6E1</div>";
-                        if(strpos($ligneValue, "Feu") !== false){
-                            $sort->element = "Feu";
+
+                        $elements = ["Feu", "Eau", "Terre", "Air"];
+                        foreach ($elements as $element) {
+                            if (strpos($ligneValue, $element) !== false) {
+                                $sort->element = $element;
+                                break;
+                            }
                         }
-                        if(strpos($ligneValue, "Eau") !== false){
-                            $sort->element = "Eau";
-                        }
-                        if(strpos($ligneValue, "Terre") !== false){
-                            $sort->element = "Terre";
-                        }
-                        if(strpos($ligneValue, "Air") !== false){
-                            $sort->element = "Air";
-                        }
-                        if(strpos($ligneValue, "Lumière") !== false){
+
+                        if (strpos($ligneValue, "Lumière") !== false) {
                             $sort->isLumiere = true;
                         }
-                        if(strpos($ligneValue, "Stasis") !== false){
+
+                        if (strpos($ligneValue, "Stasis") !== false) {
                             $sort->isStasis = true;
                         }
-                        if($compteurCC == 1){
+
+                        if ($compteurCC === 1) {
                             $sort->isCrit = true;
                         }
-                        if(isset($compteurParade) && $compteurParade == 1){
+
+                        if (isset($compteurParade) && $compteurParade === 1) {
                             $sort->isParade = true;
                         }
+
                         $sort->save();
                     }
                 }
-                //echo $value."</br>";
             }
             //DEGAT___________________________________________________________________________
             $positionMotClef = strpos($ligneSimplifier, "PV");

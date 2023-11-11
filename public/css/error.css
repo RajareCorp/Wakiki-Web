@@ -4,8 +4,8 @@
 }
 
 .img-error {
-    width: 10%; /* Réduire la largeur de l'image à 10% de la largeur de son conteneur */
-    max-width: 100px; /* Limiter la largeur maximale de l'image à 100 pixels (ajustez selon vos besoins) */
+    width: 100%; /* Réduire la largeur de l'image à 10% de la largeur de son conteneur */
+    max-width: 40%; /* Limiter la largeur maximale de l'image à 100 pixels (ajustez selon vos besoins) */
     height: auto; /* Garantir une hauteur proportionnelle à la largeur */
 }
 
@@ -18,11 +18,12 @@
 
 .text-container {
     text-align: left;
+    font-size: 25px;
     margin-right: 20px; /* Ajustez la marge entre le texte et l'image selon vos besoins */
     background-color: #100707;
     border: red solid 5px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 100px;
 }
 
 a {

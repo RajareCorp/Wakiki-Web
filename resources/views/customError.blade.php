@@ -18,8 +18,6 @@
     <div class="error-container">
         <div class="text-container">
             <h1 class="text-2xl font-semibold error mb-2">Wakiki a planté... @if (isset($status))Code : {{$status}}@endif</h1>
-                
-             
             <p class="error"> Vous avez du taper comme un fouirox !<br>
                 Il semble y avoir un problème.<br>
                 Vous pouvez reset vos logs pour reprendre à zéro<br>
@@ -32,7 +30,7 @@
         <button>Reset</button>
         </form>
         </div>
-        <img src="images/blerox.png" alt="Erreur" class="img-reduced">
+        <img src="images/blerox.png" alt="Erreur" class="img-error">
     </div>
 
     </body>

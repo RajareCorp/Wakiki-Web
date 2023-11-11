@@ -905,8 +905,9 @@ class CalculController extends Controller
 
             //ARMURE___________________________________________________________________________
             $positionMotClef = strpos($ligneSimplifier, "Armure");
-            if($positionMotClef !== false && $sort != false){
-    
+            $antiSadida = strpos($ligneSimplifier, "(Prière Sadida)");
+            if($positionMotClef != false && $antiSadida == false && $sort != false){
+                
                 $ligneValue = substr($ligneSimplifier, $debutValue);
                 $value = "";
                 foreach (str_split($ligneValue) as $chiffre) {

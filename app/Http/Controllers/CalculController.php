@@ -16,6 +16,7 @@ class CalculController extends Controller
     
     Sort::truncate();
     histoSort::truncate();
+    histoEffet::truncate();
     $fichier = fopen($log, 'rb');
     $total = count(file($log));
 

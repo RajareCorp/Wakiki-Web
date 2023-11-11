@@ -11,7 +11,6 @@
                     ______</br>
                     &#x1F527[Bugs]&#x1F527</br>
                     - Sort en 2 tours</br>
-                    - Passif : Prière de sadida</br>
                     ______</br>
                     &#x1F4F0[V1.0.2]&#x1F4F0</br>
                     - Liste joueur &#x1F4DC</br>

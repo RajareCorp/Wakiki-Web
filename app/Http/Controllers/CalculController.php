@@ -563,7 +563,7 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 $sort = new Sort;
                 $sort->nom = "Cinétose";
-
+                $sort->save();
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
                         $histo = new histoSort;
@@ -572,13 +572,13 @@ class CalculController extends Controller
                         $histo->save();
                     }
                 }
-                $sort->save();
             }
-            $positionMotClef = strpos($ligneSimplifier, "Pilier)");
+            $positionMotClef = strpos($ligneSimplifier, "Placidité)");
             if($positionMotClef !== false){
                 $sort = new Sort;
-                $sort->nom = "Pilier";
-
+                $sort->nom = "Placidité";
+                $sort->isSoinArmure = 1;
+                $sort->save();
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
                         $histo = new histoSort;
@@ -587,8 +587,84 @@ class CalculController extends Controller
                         $histo->save();
                     }
                 }
-                $sort->save();
             }
+            $positionMotClef = strpos($ligneSimplifier, "Pacte de sang)");
+            if($positionMotClef !== false){
+                $sort = new Sort;
+                $sort->nom = "Pacte de sang";
+                $sort->isSoinArmure = 1;
+                $sort->save();
+                foreach ($Players as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        $histo = new histoSort;
+                        $histo->idSort = $sort->id;
+                        $histo->idPlayer = $entite->id;
+                        $histo->save();
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Fracasseur)");
+            if($positionMotClef !== false){
+                $sort = new Sort;
+                $sort->nom = "Fracasseur";
+                $sort->isSoinArmure = 1;
+                $sort->save();
+                foreach ($Players as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        $histo = new histoSort;
+                        $histo->idSort = $sort->id;
+                        $histo->idPlayer = $entite->id;
+                        $histo->save();
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Armure brûlante)");
+            if($positionMotClef !== false){
+                $sort = new Sort;
+                $sort->nom = "Armure brûlante";
+                $sort->isSoinArmure = 1;
+                $sort->save();
+                foreach ($Players as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        $histo = new histoSort;
+                        $histo->idSort = $sort->id;
+                        $histo->idPlayer = $entite->id;
+                        $histo->save();
+                    }
+                }
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Pilier)");
+            if($positionMotClef !== false && isset($lanceur)){
+                $sort = new Sort;
+                $sort->nom = "Pilier";
+                $sort->isSoinArmure = 1;
+                $sort->save();
+                foreach ($Players as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        $histo = new histoSort;
+                        $histo->idSort = $sort->id;
+                        $histo->idPlayer = $entite->id;
+                        $histo->save();
+                    }
+                }
+                
+            }
+            $positionMotClef = strpos($ligneSimplifier, "Refus de la mort)");
+            if($positionMotClef !== false){
+                $sort = new Sort;
+                $sort->nom = "Refus de la mort";
+                $sort->isSoinArmure = 1;
+                $sort->save();
+                foreach ($Players as $entite) {
+                    if($entite->nom == $lanceur){ 
+                        $histo = new histoSort;
+                        $histo->idSort = $sort->id;
+                        $histo->idPlayer = $entite->id;
+                        $histo->save();
+                    }
+                }
+            }
+
             $positionMotClef = strpos($ligneSimplifier, "Cyanose)");
             if($positionMotClef !== false){
                 $sort = new Sort;
@@ -976,7 +1052,7 @@ class CalculController extends Controller
             }
             //DEGAT___________________________________________________________________________
             $positionMotClef = strpos($ligneSimplifier, "PV");
-            if($positionMotClef !== false){
+            if($positionMotClef !== false && isset($lanceur)){
                 $ligneValue = substr($ligneSimplifier, $debutValue);
                 $positionMotClef = strpos($ligneValue, "-");
                 if($positionMotClef == 1){

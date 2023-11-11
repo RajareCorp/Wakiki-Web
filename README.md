@@ -13,7 +13,7 @@
 ⚠Veuillez noter que Wakiki n'est en aucun cas affilié au studio Ankama ni à son jeu Wakfu.⚠
 
 Wakiki est une application Web utilisant le framework Laravel afin d'avoir un affichage poussé de vos combats sur Wakfu.<br>
-L'application fonctionne grâce à vos logs chats ce qui les rend majoritairement inutilisables pour Ankama en cas de debug de leur part.
+L'application fonctionne grâce à vos logs chats.
 Wakiki permet de suivre :<br>
     - Dégats infligés<br>
     - Soins reçus<br>
@@ -22,7 +22,7 @@ Wakiki permet de suivre :<br>
 
 ## Avertissement sur l'utilisation des logs chats de Wakfu
 
-Wakiki utilise exclusivement les logs chats du jeu Wakfu à des fins d'affichage dans l'application. Aucune altération des fichiers originaux du jeu n'est effectuée. Les utilisateurs sont informés que l'utilisation de Wakiki peut rendre leurs logs chats inutilisables pour Ankama en cas de débogage de leur part.
+Wakiki utilise exclusivement les logs chats du jeu Wakfu à des fins d'affichage dans l'application. Aucune altération des fichiers originaux du jeu n'est effectuée.
 
 ## Clause de non-responsabilité
 
@@ -58,7 +58,6 @@ Pour rappel :
     La modification du client WAKFU est interdite. Ceci englobe tous les fichiers présents dans le répertoire d'installation de WAKFU.
 
 Wakiki n'étant pas un bot, ne procurant pas d'avantage en jeu et ne modifiant aucun fichier ce trouvant dans le répertoire d'installation de Wakfu est totalement légal et ne peut entrainer de sanction.
-(Les logs ne font pas partie des fichiers présents dans le répertoire d'installation)
 
 ## Cher Ankama
 

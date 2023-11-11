@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\histoEffet;
 use App\Models\Player;
 use App\Models\histoSort;
 use App\Models\Sort;
@@ -52,14 +53,18 @@ class PlayerController extends Controller
         else
             $logPath = fgets(fopen('log.txt', 'rb'));
 
-        $fichier = fopen($request->input('reset'), 'w');
-        fclose($fichier);
+        // $fichier = fopen($request->input('reset'), 'w');
+        // fclose($fichier);
+        self::resetAllPlayer();
+        Sort::truncate();
+        histoSort::truncate();
+        histoEffet::truncate();
+        
         return view('welcome', ['logPath' => $logPath, 'players' => Player::all()]);
     }
 
     function calcul(Request $request)
     {   
-        self::resetAllPlayer();
         CalculController::Calcul(Player::all() ,$request->input('setlog'));
         $players = Player::where('id', $request->input('username'))->get();
         $sorts = histoSort::where('idPlayer', $request->input('username'))->get();
@@ -98,7 +103,6 @@ class PlayerController extends Controller
             $histoLastSort[$record->idPlayer] = $record->sort;
         }
 
-        self::resetAllPlayer();
         return view('realtime', ['logPath' => $logPath, 'players' => $players,'histoLastSort' => $histoLastSort]);
     }
 

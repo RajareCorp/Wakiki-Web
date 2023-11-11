@@ -10,13 +10,13 @@
                     Armures = Armures données</br>
                     ______</br>
                     &#x1F527[Bugs]&#x1F527</br>
+                    - Affichage Sacrieur</br>
                     - Sort en 2 tours</br>
                     ______</br>
-                    &#x1F4F0[V1.0.2]&#x1F4F0</br>
-                    - Liste joueur &#x1F4DC</br>
-                    - Ajout joueur &#x2795</br>
-                    - Suppression joueur &#x2796</br>
-                    - Logo Effet &#x1F4CA</br>
+                    &#x1F4F0[V1.1.0]&#x1F4F0</br>
+                    - New interface &#x1F4DC</br>
+                    - Optimisation &#x2795</br>
+                    - Realtime mode &#x1F4CA</br>
                     ______</br>
 
                 </span>

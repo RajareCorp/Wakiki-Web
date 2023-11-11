@@ -1,6 +1,5 @@
 @echo off
 copy .env.example .env
-composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 php artisan migrate
 setlocal
 
@@ -17,6 +16,7 @@ echo Set oWS = WScript.CreateObject("WScript.Shell") > CreateShortcut.vbs
 echo sLinkFile = "%bureau%\%nomRaccourci%.lnk" >> CreateShortcut.vbs
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> CreateShortcut.vbs
 echo oLink.TargetPath = "%cible%" >> CreateShortcut.vbs
+echo oLink.WorkingDirectory = "%~dp0" >> CreateShortcut.vbs
 
 rem Ajouter le code pour modifier l'icône du raccourci
 echo oLink.IconLocation = "%icone%" >> CreateShortcut.vbs

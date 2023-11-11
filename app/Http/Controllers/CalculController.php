@@ -737,8 +737,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F3AF<span class=tooltiptext>Pointe affûtée</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -747,8 +748,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F52A<span class=tooltiptext>Escroquerie (Dégats +)</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -757,8 +759,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F48E<span class=tooltiptext>Trésors</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -767,8 +770,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F315<span class=tooltiptext>Début Ougigarou</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -777,8 +781,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F319<span class=tooltiptext>Fin Ougigarou</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -787,8 +792,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F30C<span class=tooltiptext>Portail Céleste - Compteur +1</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -797,8 +803,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F386<span class=tooltiptext>Don Céleste (30% Dommages infligés)</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -806,8 +813,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F3B2<span class=tooltiptext>Coup Précis (50% Dommages infligés, 1PW)</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -815,8 +823,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F387<span class=tooltiptext>Abondance</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -824,8 +833,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x23EB<span class=tooltiptext>Initiative de l'Âme (+2PA)</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -833,8 +843,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1F505<span class=tooltiptext>Plénitude (+25 Abondance)</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -842,8 +853,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x26A1<span class=tooltiptext>Dynamo (+1 PA)</span></div>";
+                        $sort->save();
                     }
                 }
             }
@@ -851,8 +863,9 @@ class CalculController extends Controller
             if($positionMotClef !== false){
                 foreach ($Players as $entite) {
                     if($entite->nom == $lanceur){ 
-                        end($entite->histoSort)->effet = "
+                        $sort->effet = "
                         <div class=tooltip>&#x1FA78<span class=tooltiptext>Entaille (25% Dommages infligés)</span></div>";
+                        $sort->save();
                     }
                 }
             }

@@ -53,8 +53,8 @@ class PlayerController extends Controller
         else
             $logPath = fgets(fopen('log.txt', 'rb'));
 
-        // $fichier = fopen($request->input('reset'), 'w');
-        // fclose($fichier);
+        $fichier = fopen($request->input('reset'), 'w');
+        fclose($fichier);
         self::resetAllPlayer();
         Sort::truncate();
         histoSort::truncate();

@@ -15,6 +15,7 @@ class CalculController extends Controller
 
     static function Calcul($Players,$log){
 
+    date_default_timezone_set("Europe/Paris");
     $optiFile = fopen(public_path().'\time.txt', 'r');
     $lastTimeCheck = fgets($optiFile);
     fclose($optiFile);

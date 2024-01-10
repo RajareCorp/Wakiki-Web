@@ -42,7 +42,6 @@ class CalculController extends Controller
                 $lanceur = substr($ligneSimplifier,23,strpos(substr($ligneSimplifier,23),"lance")-1); //Nom du lanceur de sort
                 $sort = new Sort;
                 $sort->nom = substr($ligneSimplifier,$positionMotClef+14); //Nom du sort lance
-
                 if($lastTime < $newTime){
                     // 2. Utiliser des tableaux associatifs pour les effets des sorts :
                     $effetsSortsZobal = [
@@ -151,7 +150,7 @@ class CalculController extends Controller
                     "Placidité" => ["isSoinArmure" => 1],
                     "Pacte de sang" => ["isSoinArmure" => 1],
                     "Fracasseur" => ["isSoinArmure" => 1],
-                    "Armure brûlante" => ["isSoinArmure" => 1],
+                    // "Armure brûlante" => ["isSoinArmure" => 1],
                     "Pilier" => ["isSoinArmure" => 1],
                     "Refus de la mort" => ["isSoinArmure" => 1],
                     "Stratégie robotique" => [],
@@ -278,8 +277,9 @@ class CalculController extends Controller
                 //ARMURE___________________________________________________________________________
                 $positionMotClef = strpos($ligneSimplifier, "Armure");
                 $antiSadida = strpos($ligneSimplifier, "(Prière Sadida)");
+                $antiSacri = strpos($ligneSimplifier, "(Armure brûlante)");
 
-                if ($positionMotClef !== false && $antiSadida === false) {
+                if ($positionMotClef !== false && $antiSadida === false && $antiSacri === false) {
                     $ligneValue = substr($ligneSimplifier, $debutValue);
                     $value = preg_replace('/[^0-9]/', '', $ligneValue); // Remplace tout ce qui n'est pas un chiffre par une chaîne vide
 
